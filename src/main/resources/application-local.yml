@@ -1,22 +1,18 @@
 server:
   port: 8085
-  servlet:
-    context-path: /pfe
 
 spring:
-  jpa:
-    database: mysql
-    show-sql: true
-    hibernate:
-     ddl-auto: create
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/pfe
     username: root
     password: root
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: create
 
 logging:
   level:
-    org.springframework.web: debug
-    ma.pfe: DEBUG
-    org.hibernate: ERROR
+    ma.pfe: INFO

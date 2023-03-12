@@ -6,14 +6,14 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/pfe
     username: root
-    password:
-      jpa:
-        database: mysql
-        show: true
-        hibernate:
-          ddl_auto: create
-      logging:
-        level:
-          org.springframework.web: DEBUG
-          ma.pfe.local: DEBUG
-          org.habernate:
+    password: root
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+logging:
+  level:
+    org.springframework.web: DEBUG
+    ma.pfe: DEBUG
+    org.hibernate: ERROR
