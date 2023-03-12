@@ -4,19 +4,17 @@ import javax.persistence.*;
 
 @Entity
 public class StudentEntity {
-    @Id
-    @Column(name = "id_student")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @EmbeddedId
+    private StudentId StudentId;
     @Column(name = "name_student")
     private String name;
 
-    public long getId() {
-        return id;
+    public StudentId getStudentId() {
+        return StudentId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setStudentId(ma.pfe.entities.StudentId studentId) {
+        StudentId = studentId;
     }
 
     public String getName() {
@@ -30,7 +28,7 @@ public class StudentEntity {
     @Override
     public String toString() {
         return "StudentEntity{" +
-                "id=" + id +
+                "StudentId=" + StudentId +
                 ", name='" + name + '\'' +
                 '}';
     }

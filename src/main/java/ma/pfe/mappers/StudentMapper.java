@@ -7,19 +7,20 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
 @Component(value = "mapper1")
 public class StudentMapper {
 
     public StudentEntity studentDtoToEntity(StudentDto dto) {
         StudentEntity studentEntity = new StudentEntity();
-        studentEntity.setId(dto.getId());
+        //studentEntity.setStudentId(new StudentId(dto.getId(),""));
         studentEntity.setName(dto.getName());
         return studentEntity;
     }
 
     public StudentDto studentEntityToDto(StudentEntity studentEntity) {
         StudentDto dto = new StudentDto();
-        dto.setId(studentEntity.getId());
+        //dto.setId(studentEntity.getStudentId().getId());
         dto.setName(studentEntity.getName());
         return dto;
     }

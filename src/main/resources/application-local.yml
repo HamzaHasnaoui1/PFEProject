@@ -17,6 +17,6 @@ spring:
 
 logging:
   level:
-      org.springframework.web: DEBUG
-      ma.pfe.local: DEBUG
-      org.habernate:
+    org.springframework.web: debug
+    ma.pfe: DEBUG
+    org.hibernate: ERROR
