@@ -21,10 +21,6 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    public void studentController1(@Qualifier("service1") StudentService studentService) {
-        this.studentService = studentService;
-    }
-
     @PostMapping
     public Long save(@RequestBody  StudentDto dto) {
         LOGGER.debug("start method save dto : {} ",dto);
