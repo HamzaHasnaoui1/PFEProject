@@ -1,7 +1,7 @@
 package ma.pfe.services;
 
-import ma.pfe.dtos.StudentDto;
 import ma.pfe.mappers.StudentMapper;
+import ma.pfe.dtos.StudentDto;
 import ma.pfe.repositories.StudentRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +16,7 @@ public class StudentServiceImpl implements StudentService {
 
     private StudentRepository studentRepository;
     private StudentMapper studentMapper;
+
 
     public StudentServiceImpl(@Qualifier("repo1") StudentRepository studentRepository, @Qualifier("mapper1") StudentMapper studentMapper) {
         this.studentRepository = studentRepository;
@@ -37,11 +38,6 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Boolean deletebyid(Long id) {
-        return null;
-    }
-
-    @Override
     public Boolean delete(Long id) {
         LOGGER.debug("start method delete id : {} ",id);
         studentRepository.deleteById(id);
@@ -53,4 +49,11 @@ public class StudentServiceImpl implements StudentService {
         LOGGER.debug("start method select All");
         return studentMapper.studentEntiesToDtos(studentRepository.findAll());
     }
+
+    @Override
+    public Boolean deletebyid(Long id) {
+        return null;
+    }
+
+
 }

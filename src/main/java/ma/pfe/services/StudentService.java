@@ -5,11 +5,13 @@ import ma.pfe.dtos.StudentDto;
 import java.util.List;
 
 public interface StudentService {
-    Long save (StudentDto dto);
-    Long update (StudentDto dto);
-    Boolean deletebyid (Long id);
+    Long save(StudentDto s);
+
+    Long update(StudentDto s);
 
     Boolean delete(Long id);
 
-    List <StudentDto> selectAll ();
+    List<StudentDto> selectAll();
+
+    Boolean deletebyid(Long id);
 }
