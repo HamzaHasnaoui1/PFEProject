@@ -1,4 +1,6 @@
 server:
+  servlet :
+    context-path : /pfe
   port: 8085
 
 spring:
@@ -15,4 +17,6 @@ spring:
 
 logging:
   level:
-    ma.pfe: INFO
+    ma.pfe: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR

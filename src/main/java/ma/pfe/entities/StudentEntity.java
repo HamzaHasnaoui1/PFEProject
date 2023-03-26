@@ -2,14 +2,17 @@ package ma.pfe.entities;
 
 import javax.persistence.*;
 
-// @Embeddable @EmbeddedId
+
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name="T_STUDENTS")
+
 public class StudentEntity {
 
     @EmbeddedId
     private StudentId studentId;
 
-    @Column(name = "name_student")
+    @Column(name ="T_STUDENTS")
     private String name;
 
     @Embedded

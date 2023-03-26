@@ -5,7 +5,7 @@ import ma.pfe.dtos.StudentDto;
 import java.util.List;
 
 public interface StudentService {
-    Long save(StudentDto s);
+    StudentDto save(StudentDto s);
 
     Long update(StudentDto s);
 

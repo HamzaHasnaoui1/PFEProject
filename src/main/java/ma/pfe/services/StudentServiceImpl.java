@@ -24,10 +24,10 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Long save(StudentDto dto) {
+    public StudentDto save(StudentDto dto) {
         LOGGER.debug("start method save dto : {} ",dto);
         StudentDto re = studentMapper.studentEntityToDto(studentRepository.save(studentMapper.studentDtoToEntity(dto)));
-        return re.getId();
+        return re;
     }
 
     @Override

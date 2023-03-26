@@ -22,7 +22,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public Long save(@RequestBody  StudentDto dto) {
+    public StudentDto save(@RequestBody  StudentDto dto) {
         LOGGER.debug("start method save dto : {} ",dto);
         return studentService.save(dto);
     }

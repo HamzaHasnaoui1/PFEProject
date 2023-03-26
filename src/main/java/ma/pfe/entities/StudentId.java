@@ -4,10 +4,17 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 @Embeddable
-public class StudentId implements Serializable {
-    private Long id ;
+public class StudentId implements Serializable{
+    private Long id;
     private String code;
 
+    public StudentId(Long id, String code) {
+        this.id = id;
+        this.code = code;
+    }
+
+    public StudentId() {
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -19,5 +26,29 @@ public class StudentId implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id, code);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentId{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                '}';
     }
 }
