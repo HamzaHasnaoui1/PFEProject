@@ -1,6 +1,7 @@
 package ma.pfe.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -21,6 +22,9 @@ public class StudentEntity {
             @AttributeOverride(name="avenue",column = @Column(name = "avenue_student"))
     })
     private Adresse adresse;
+
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    private List<CourseEntity> courses;
 
     public Adresse getAdresse() {
         return adresse;
@@ -46,11 +50,21 @@ public class StudentEntity {
         this.name = name;
     }
 
+    public List<CourseEntity> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<CourseEntity> courses) {
+        this.courses = courses;
+    }
+
     @Override
     public String toString() {
         return "StudentEntity{" +
                 "studentId=" + studentId +
                 ", name='" + name + '\'' +
+                ", adresse=" + adresse +
+                ", courses=" + courses +
                 '}';
     }
 }

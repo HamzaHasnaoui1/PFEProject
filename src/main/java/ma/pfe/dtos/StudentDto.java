@@ -1,15 +1,20 @@
 package ma.pfe.dtos;
 
-public class StudentDto {
-    private Long id ;
-    private String name ;
+import java.util.List;
 
-    public Long getId() {
-        return id;
+public class StudentDto {
+
+        private StudentIdDto studentId ;
+        private String name ;
+        private List<CourseDto> courses;
+        private AdresseDto adresse;
+
+    public StudentIdDto getStudentId() {
+        return studentId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setStudentId(StudentIdDto studentId) {
+        this.studentId = studentId;
     }
 
     public String getName() {
@@ -20,11 +25,29 @@ public class StudentDto {
         this.name = name;
     }
 
+    public List<CourseDto> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<CourseDto> courses) {
+        this.courses = courses;
+    }
+
+    public AdresseDto getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(AdresseDto adresse) {
+        this.adresse = adresse;
+    }
+
     @Override
     public String toString() {
         return "StudentDto{" +
-                "id=" + id +
+                "studentId=" + studentId +
                 ", name='" + name + '\'' +
+                ", courses=" + courses +
+                ", adresse=" + adresse +
                 '}';
     }
 }
