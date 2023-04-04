@@ -1,6 +1,7 @@
 package ma.pfe.controllers;
 
 import ma.pfe.dtos.StudentDto;
+import ma.pfe.dtos.StudentIdDto;
 import ma.pfe.services.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +23,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public StudentDto save(@RequestBody  StudentDto dto) {
+    public Long save(@RequestBody  StudentDto dto) {
         LOGGER.debug("start method save dto : {} ",dto);
         return studentService.save(dto);
     }
@@ -33,16 +34,23 @@ public class StudentController {
         return studentService.update(dto);
     }
 
-    @DeleteMapping("/{ids}")
-    public Boolean delete(@PathVariable("ids") Long id) {
-        LOGGER.debug("start method delete id : {} ",id);
-        return studentService.deletebyid(id);
+    @DeleteMapping("/{id}/{code}")
+    public Boolean deleteById(@PathVariable("id") long id,@PathVariable("code") String code) {
+        LOGGER.debug("start method select by id {} , code {} ",id,code);
+        StudentIdDto idcomp =new StudentIdDto(id,code);
+        return studentService.delete(idcomp);
     }
 
     @GetMapping
     public List<StudentDto> selectAll() {
         LOGGER.debug("start method select All");
         return studentService.selectAll();
+    }
+    @GetMapping("/{id}/{code}")
+    public StudentDto selectById(@PathVariable("id") long id,@PathVariable("code") String code) {
+        LOGGER.debug("start method select by id {} , code {} ",id,code);
+        StudentIdDto idcomp =new StudentIdDto(id,code);
+        return studentService.selectById(idcomp);
     }
 
 }

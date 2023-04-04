@@ -35,4 +35,13 @@ public class Adresse {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    @Override
+    public String toString() {
+        return "Adresse{" +
+                "rue='" + rue + '\'' +
+                ", avenue='" + avenue + '\'' +
+                ", number='" + number + '\'' +
+                '}';
+    }
 }

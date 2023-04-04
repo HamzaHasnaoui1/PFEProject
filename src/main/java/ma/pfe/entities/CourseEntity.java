@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class CourseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
 
@@ -30,7 +30,7 @@ public class CourseEntity {
 
     @Override
     public String toString() {
-        return "CouseEntity{" +
+        return "CourseEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

@@ -13,4 +13,11 @@ public class Majeur extends StudentEntity{
     public void setCin(String cin) {
         this.cin = cin;
     }
+
+    @Override
+    public String toString() {
+        return "Majeur{" +
+                "cin='" + cin + '\'' +
+                '}';
+    }
 }

@@ -13,4 +13,11 @@ public class Mineur extends StudentEntity{
     public void setAuthorized(Boolean authorized) {
         isAuthorized = authorized;
     }
+
+    @Override
+    public String toString() {
+        return "Mineur{" +
+                "isAuthorized=" + isAuthorized +
+                '}';
+    }
 }
