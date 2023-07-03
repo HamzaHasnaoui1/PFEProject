@@ -32,6 +32,15 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
+    </dependency>
 
     <!-- MySQL Driver -->
     <dependency>
@@ -57,6 +66,12 @@
       <version>1.5.3.Final</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+
   </dependencies>
   <build>
 
@@ -66,8 +81,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.5.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>8</source>
+          <target>8</target>
           <annotationProcessorPaths>
             <path>
               <groupId>org.mapstruct</groupId>

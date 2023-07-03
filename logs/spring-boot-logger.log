@@ -1,29 +1,775 @@
-2023-05-05 20:17:47,105 INFO org.springframework.boot.StartupInfoLogger [main] Starting PFEApplication using Java 19 on HAMZA-HASNAOUI with PID 15728 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
-2023-05-05 20:17:47,112 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.1, Spring v5.3.8
-2023-05-05 20:17:47,112 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
-2023-05-05 20:17:48,365 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-05-05 20:17:48,464 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 87 ms. Found 1 JPA repository interfaces.
-2023-05-05 20:17:49,333 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
-2023-05-05 20:17:49,348 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
-2023-05-05 20:17:49,348 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2023-05-05 20:17:49,349 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
-2023-05-05 20:17:49,472 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2023-05-05 20:17:49,473 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2285 ms
-2023-05-05 20:17:49,609 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-05-05 20:17:49,866 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
-2023-05-05 20:17:49,871 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-05-05 20:17:51,495 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-05-05 20:17:52,029 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-05-05 20:17:52,129 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 12 mappings in 'requestMappingHandlerMapping'
-2023-05-05 20:17:52,311 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-05-05 20:17:52,347 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
-2023-05-05 20:17:52,363 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
-2023-05-05 20:17:52,370 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-05-05 20:17:52,441 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
-2023-05-05 20:17:52,483 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/pfe'
-2023-05-05 20:17:52,754 INFO org.springframework.boot.StartupInfoLogger [main] Started PFEApplication in 6.498 seconds (JVM running for 7.587)
-2023-05-05 20:17:52,758 INFO ma.pfe.PFEApplication [main] Access URLs:
+2023-07-03 00:00:01,788 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:00:02,435 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:00:03,094 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:00:03,502 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32029cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e8eafb2, org.springframework.security.web.header.HeaderWriterFilter@5b5d6f9c, org.springframework.security.web.authentication.logout.LogoutFilter@29088d3d, ma.monavocat.Filters.JwtRequestFilter@58720eb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@8cd2bb5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57859e2c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48f95f96, org.springframework.security.web.session.SessionManagementFilter@3c39c739, org.springframework.security.web.access.ExceptionTranslationFilter@6e70861, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@175745fc]
+2023-07-03 00:00:03,708 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:00:03,787 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:00:03,829 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:00:03,844 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:00:04,210 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:00:04,322 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/api'
+2023-07-03 00:00:04,855 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 9.191 seconds (JVM running for 10.055)
+2023-07-03 00:00:05,960 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
 ----------------------------------------------------------
-	Local: 		http://127.0.0.1:8085/pfe/swagger-ui/#/
-	External: 	http://192.168.1.10:8085/pfe/swagger-ui/#/
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
 ----------------------------------------------------------
+2023-07-03 00:00:20,879 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:00:20,880 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:00:20,880 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:00:20,880 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:00:20,881 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:00:20,882 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@e6fbf82
+2023-07-03 00:00:20,883 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@7aad7df5
+2023-07-03 00:00:20,884 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:00:20,884 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 4 ms
+2023-07-03 00:00:20,906 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:00:20,919 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "ERROR" dispatch for GET "/api/error", parameters={}
+2023-07-03 00:00:20,932 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:00:20,975 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:00:20,980 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "ERROR" dispatch, status 403
+2023-07-03 00:01:27,712 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-3] JWT Token does not begin with Bearer String
+2023-07-03 00:01:27,715 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-3] "ERROR" dispatch for GET "/api/error", parameters={}
+2023-07-03 00:01:27,716 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-3] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:01:27,720 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-3] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:01:27,721 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-3] Exiting from "ERROR" dispatch, status 403
+2023-07-03 00:01:32,490 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-5] JWT Token does not begin with Bearer String
+2023-07-03 00:01:32,492 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-5] "ERROR" dispatch for GET "/api/error", parameters={}
+2023-07-03 00:01:32,493 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-5] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:01:32,496 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-5] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:01:32,497 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-5] Exiting from "ERROR" dispatch, status 403
+2023-07-03 00:02:05,372 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-9] JWT Token does not begin with Bearer String
+2023-07-03 00:02:05,373 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-9] GET "/api/swagger-ui/", parameters={}
+2023-07-03 00:02:05,378 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-9] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:02:05,382 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-9] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:02:05,383 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-9] View name 'forward:', model {}
+2023-07-03 00:02:05,385 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-9] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:02:05,387 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-9] "FORWARD" dispatch for GET "/api/swagger-ui/index.html", parameters={}
+2023-07-03 00:02:05,392 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-9] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:02:05,393 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-9] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:02:05,394 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-9] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:02:05,396 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-9] "ERROR" dispatch for GET "/api/error", parameters={}
+2023-07-03 00:02:05,397 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-9] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:02:05,410 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-9] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:02:05,412 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-9] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:03:55,552 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:03:55,556 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:03:55,562 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:03:59,264 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 19260 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:03:59,268 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:04:00,685 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:04:00,806 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 107 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:04:01,770 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:04:01,781 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:04:01,782 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:04:01,783 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:04:01,933 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:04:01,933 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2579 ms
+2023-07-03 00:04:02,089 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:04:02,335 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:04:02,340 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:04:03,990 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:04:04,586 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:04:05,227 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:04:05,588 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19a4cdea, org.springframework.security.web.context.SecurityContextPersistenceFilter@37ad818e, org.springframework.security.web.header.HeaderWriterFilter@3c39c739, org.springframework.security.web.authentication.logout.LogoutFilter@220d7eb7, ma.monavocat.Filters.JwtRequestFilter@2a525f88, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a2881d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2ced7cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@434a2a10, org.springframework.security.web.session.SessionManagementFilter@57859e2c, org.springframework.security.web.access.ExceptionTranslationFilter@56b66cc6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@26d02dc6]
+2023-07-03 00:04:05,740 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:04:05,810 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:04:05,841 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:04:05,857 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:04:06,140 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:04:06,228 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:04:06,633 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 8.069 seconds (JVM running for 9.01)
+2023-07-03 00:04:07,531 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:06:41,667 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:06:41,668 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:06:41,668 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:06:41,669 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:06:41,669 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:06:41,670 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@d03cdc7
+2023-07-03 00:06:41,671 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@57cc0333
+2023-07-03 00:06:41,671 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:06:41,671 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 3 ms
+2023-07-03 00:06:41,692 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:06:41,703 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:06:41,712 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:06:41,720 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8]
+2023-07-03 00:06:41,720 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-1] View name 'forward:', model {}
+2023-07-03 00:06:41,724 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-1] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:06:41,728 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:06:41,730 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:06:41,731 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:06:41,733 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:06:41,734 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:06:41,737 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:06:41,764 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:06:41,767 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:07:28,803 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:07:28,807 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:07:28,813 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:07:34,026 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 9024 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:07:34,031 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:07:35,591 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:07:35,736 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 130 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:07:36,818 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:07:36,833 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:07:36,834 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:07:36,835 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:07:37,003 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:07:37,003 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2888 ms
+2023-07-03 00:07:37,174 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:07:37,446 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:07:37,454 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:07:39,231 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:07:39,761 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:07:40,388 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:07:40,730 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@491f3fb0, org.springframework.security.web.context.SecurityContextPersistenceFilter@1516f497, org.springframework.security.web.header.HeaderWriterFilter@41271320, org.springframework.security.web.authentication.logout.LogoutFilter@4a532271, ma.monavocat.Filters.JwtRequestFilter@4d6027be, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d204b30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5390862e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d0ce151, org.springframework.security.web.session.SessionManagementFilter@5bc44d78, org.springframework.security.web.access.ExceptionTranslationFilter@3e7da4cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@722d3ddb]
+2023-07-03 00:07:40,872 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:07:40,945 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:07:40,975 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:07:40,985 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:07:41,269 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:07:41,334 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:07:41,746 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 8.423 seconds (JVM running for 9.478)
+2023-07-03 00:07:42,574 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:07:48,412 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:07:48,414 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:07:48,416 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:07:48,417 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:07:48,418 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:07:48,420 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@659565ed
+2023-07-03 00:07:48,421 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@4b8ac512
+2023-07-03 00:07:48,422 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:07:48,423 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 7 ms
+2023-07-03 00:07:48,478 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:07:48,491 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:07:48,507 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:07:48,516 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:07:48,517 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-1] View name 'forward:', model {}
+2023-07-03 00:07:48,519 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-1] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:07:48,522 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:07:48,529 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:07:48,530 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:07:48,532 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:07:48,534 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:07:48,537 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:07:48,581 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:07:48,596 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:08:02,480 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-3] JWT Token does not begin with Bearer String
+2023-07-03 00:08:02,484 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-3] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:08:02,485 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-3] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:08:02,499 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-3] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:08:02,500 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-3] Exiting from "ERROR" dispatch, status 403
+2023-07-03 00:10:11,919 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-5] JWT Token does not begin with Bearer String
+2023-07-03 00:10:11,921 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-5] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:10:11,922 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-5] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:10:11,923 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-5] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:10:11,923 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-5] View name 'forward:', model {}
+2023-07-03 00:10:11,924 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-5] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:10:11,924 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-5] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:10:11,926 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-5] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:10:11,926 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-5] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:10:11,927 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-5] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:10:11,928 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-5] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:10:11,931 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-5] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:10:11,934 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-5] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:10:11,935 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-5] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:10:55,580 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:10:55,584 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:10:55,592 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:10:59,420 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 10268 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:10:59,425 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:11:01,076 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:11:01,215 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 124 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:11:02,330 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:11:02,344 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:11:02,345 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:11:02,346 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:11:02,497 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:11:02,498 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2971 ms
+2023-07-03 00:11:02,667 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:11:02,905 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:11:02,910 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:11:05,003 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:11:05,583 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:11:06,434 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:11:06,933 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fb51e17, org.springframework.security.web.context.SecurityContextPersistenceFilter@3545c913, org.springframework.security.web.header.HeaderWriterFilter@419ece7a, org.springframework.security.web.authentication.logout.LogoutFilter@6ff87203, ma.monavocat.Filters.JwtRequestFilter@5bddd141, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3cdc5155, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34766f4b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@722d3ddb, org.springframework.security.web.session.SessionManagementFilter@32da6cef, org.springframework.security.web.access.ExceptionTranslationFilter@8cd2bb5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@732bb49d]
+2023-07-03 00:11:07,097 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:11:07,172 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:11:07,204 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:11:07,215 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:11:07,507 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:11:07,577 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:11:07,988 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 9.339 seconds (JVM running for 10.357)
+2023-07-03 00:11:08,792 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:11:30,612 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:11:30,612 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:11:30,613 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:11:30,613 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:11:30,614 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:11:30,616 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1267f832
+2023-07-03 00:11:30,617 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@fe38d1e
+2023-07-03 00:11:30,617 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:11:30,618 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 5 ms
+2023-07-03 00:11:30,640 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:11:30,651 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:11:30,661 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:11:30,669 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:11:30,669 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-1] View name 'forward:', model {}
+2023-07-03 00:11:30,672 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-1] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:11:30,675 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:11:30,679 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:11:30,679 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:11:30,682 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:11:30,683 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:11:30,687 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:11:30,724 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:11:30,728 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:12:57,488 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:12:57,494 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:12:57,501 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:13:02,580 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 20096 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:13:02,582 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:13:04,200 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:13:04,388 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 165 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:13:05,645 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:13:05,664 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:13:05,665 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:13:05,665 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:13:05,829 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:13:05,830 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3169 ms
+2023-07-03 00:13:06,036 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:13:06,319 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:13:06,324 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:13:08,106 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:13:08,678 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:13:09,369 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:13:09,709 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e1d813a, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c38f4de, org.springframework.security.web.header.HeaderWriterFilter@4d204b30, org.springframework.security.web.authentication.logout.LogoutFilter@1bcca516, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@923bf67, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6ff87203, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1964ef9, org.springframework.security.web.session.SessionManagementFilter@61d4155b, org.springframework.security.web.access.ExceptionTranslationFilter@1516f497, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@134ec0f3]
+2023-07-03 00:13:09,880 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:13:09,965 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:13:09,998 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:13:10,009 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:13:10,282 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:13:10,355 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:13:10,778 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 8.8 seconds (JVM running for 9.687)
+2023-07-03 00:13:11,559 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:13:14,209 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:13:14,210 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:13:14,211 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:13:14,211 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:13:14,212 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:13:14,214 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5bb661e0
+2023-07-03 00:13:14,215 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@7c7a4986
+2023-07-03 00:13:14,215 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:13:14,216 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 5 ms
+2023-07-03 00:13:14,254 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:13:14,257 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:13:14,270 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:13:14,280 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:13:14,280 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-1] View name 'forward:', model {}
+2023-07-03 00:13:14,283 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-1] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:13:14,287 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:13:14,291 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:13:14,292 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:13:14,294 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:13:14,296 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:13:14,299 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:13:14,342 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:13:14,346 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:13:18,743 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-2] JWT Token does not begin with Bearer String
+2023-07-03 00:13:18,744 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:13:18,746 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-2] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:13:18,747 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-2] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:13:18,747 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-2] View name 'forward:', model {}
+2023-07-03 00:13:18,748 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-2] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:13:18,748 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:13:18,750 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-2] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:13:18,751 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-2] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:13:18,753 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-2] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:13:18,755 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:13:18,756 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-2] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:13:18,758 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-2] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:13:18,759 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-2] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:13:27,281 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-4] JWT Token does not begin with Bearer String
+2023-07-03 00:13:27,282 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] GET "/monavocat/v1/swagger-ui", parameters={}
+2023-07-03 00:13:27,285 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+2023-07-03 00:13:27,286 DEBUG org.springframework.web.servlet.resource.ResourceHttpRequestHandler [http-nio-8085-exec-4] Resource not found
+2023-07-03 00:13:27,287 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Completed 404 NOT_FOUND
+2023-07-03 00:13:27,288 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:13:27,290 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:13:27,303 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-4] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:13:27,304 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Exiting from "ERROR" dispatch, status 404
+2023-07-03 00:13:33,736 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-6] JWT Token does not begin with Bearer String
+2023-07-03 00:13:33,737 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:13:33,738 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-6] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:13:33,739 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-6] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:13:33,739 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-6] View name 'forward:', model {}
+2023-07-03 00:13:33,740 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-6] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:13:33,740 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:13:33,742 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-6] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:13:33,742 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:13:33,743 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:13:33,744 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:13:33,745 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-6] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:13:33,748 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-6] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:13:33,750 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:13:36,943 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-7] JWT Token does not begin with Bearer String
+2023-07-03 00:13:36,943 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-7] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:13:36,945 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-7] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:13:36,946 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-7] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:13:36,947 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-7] View name 'forward:', model {}
+2023-07-03 00:13:36,948 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-7] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:13:36,948 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-7] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:13:36,950 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-7] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:13:36,952 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-7] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:13:36,953 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-7] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:13:36,954 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-7] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:13:36,955 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-7] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:13:36,961 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-7] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:13:36,962 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-7] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:14:58,657 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-10] JWT Token does not begin with Bearer String
+2023-07-03 00:14:58,659 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-10] GET "/monavocat/v1/", parameters={}
+2023-07-03 00:14:58,660 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-10] Mapped to ma.monavocat.Controllers.DossierClientController#afficherLesDossier()
+2023-07-03 00:14:58,860 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-10] Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:14:58,862 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-10] Writing [[]]
+2023-07-03 00:14:58,877 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-10] Completed 200 OK
+2023-07-03 00:15:18,502 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-2] JWT Token does not begin with Bearer String
+2023-07-03 00:15:18,503 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] GET "/monavocat/v1/tribunal/list", parameters={}
+2023-07-03 00:15:18,504 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-2] Mapped to ma.monavocat.Controllers.TribunalController#afficherLesTribunaux()
+2023-07-03 00:15:18,506 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-2] Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:15:18,508 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-2] Nothing to write: null body
+2023-07-03 00:15:18,509 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-2] Completed 200 OK
+2023-07-03 00:15:32,436 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-4] JWT Token does not begin with Bearer String
+2023-07-03 00:15:32,436 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] GET "/monavocat/v1/", parameters={}
+2023-07-03 00:15:32,437 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to ma.monavocat.Controllers.DossierClientController#afficherLesDossier()
+2023-07-03 00:15:32,443 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-4] Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:15:32,443 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] Writing [[]]
+2023-07-03 00:15:32,447 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Completed 200 OK
+2023-07-03 00:16:03,173 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:16:03,178 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:16:03,185 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:16:08,600 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 1240 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:16:08,604 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:16:10,356 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:16:10,547 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 167 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:16:11,869 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:16:11,889 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:16:11,892 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:16:11,893 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:16:12,079 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:16:12,080 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3382 ms
+2023-07-03 00:16:12,267 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:16:12,564 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:16:12,570 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:16:14,412 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:16:14,935 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:16:15,608 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:16:15,969 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fb51e17, org.springframework.security.web.context.SecurityContextPersistenceFilter@34766f4b, org.springframework.security.web.header.HeaderWriterFilter@3a2881d6, org.springframework.security.web.authentication.logout.LogoutFilter@35b38986, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6600d07d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fccdd1d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@722d3ddb, org.springframework.security.web.session.SessionManagementFilter@2f408960, org.springframework.security.web.access.ExceptionTranslationFilter@37ad818e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@732bb49d]
+2023-07-03 00:16:16,121 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:16:16,184 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:16:16,212 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:16:16,223 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:16:16,626 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:16:17,022 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 9.197 seconds (JVM running for 10.117)
+2023-07-03 00:16:17,082 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:16:17,085 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:16:17,090 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:16:21,830 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 21756 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:16:21,834 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:16:23,398 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:16:23,531 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 123 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:16:24,613 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:16:24,626 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:16:24,627 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:16:24,627 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:16:24,789 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:16:24,790 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2861 ms
+2023-07-03 00:16:24,951 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:16:25,213 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:16:25,219 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:16:27,147 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:16:27,607 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:16:28,124 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:16:28,398 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7962a364, org.springframework.security.web.context.SecurityContextPersistenceFilter@c2dab10, org.springframework.security.web.header.HeaderWriterFilter@5d00e30e, org.springframework.security.web.authentication.logout.LogoutFilter@4ac26092, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29088d3d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c38f4de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@756030e2, org.springframework.security.web.session.SessionManagementFilter@44103266, org.springframework.security.web.access.ExceptionTranslationFilter@4b9dd787, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@701da311]
+2023-07-03 00:16:28,517 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:16:28,563 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:16:28,584 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:16:28,594 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:16:28,862 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:16:28,918 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:16:29,280 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 8.15 seconds (JVM running for 9.189)
+2023-07-03 00:16:30,289 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:16:42,860 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:16:42,861 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:16:42,861 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:16:42,861 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:16:42,861 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:16:42,862 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1e6f7c25
+2023-07-03 00:16:42,863 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@52518ee1
+2023-07-03 00:16:42,863 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:16:42,863 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 2 ms
+2023-07-03 00:16:42,900 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:16:42,903 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] GET "/monavocat/v1/tribunal/list", parameters={}
+2023-07-03 00:16:42,910 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ma.monavocat.Controllers.TribunalController#afficherLesTribunaux()
+2023-07-03 00:16:43,038 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-1] Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:16:43,039 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] Writing [[]]
+2023-07-03 00:16:43,054 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed 200 OK
+2023-07-03 00:16:45,342 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-2] JWT Token does not begin with Bearer String
+2023-07-03 00:16:45,343 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] GET "/monavocat/v1/tribunal/list", parameters={}
+2023-07-03 00:16:45,344 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-2] Mapped to ma.monavocat.Controllers.TribunalController#afficherLesTribunaux()
+2023-07-03 00:16:45,350 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-2] Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:16:45,351 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] Writing [[]]
+2023-07-03 00:16:45,353 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-2] Completed 200 OK
+2023-07-03 00:17:18,996 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-4] JWT Token does not begin with Bearer String
+2023-07-03 00:17:18,997 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:17:19,003 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:17:19,016 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-4] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:17:19,017 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-4] View name 'forward:', model {}
+2023-07-03 00:17:19,022 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-4] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:17:19,027 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:17:19,032 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-4] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:17:19,033 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:17:19,035 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:17:19,039 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:17:19,043 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:17:19,073 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-4] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:17:19,076 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:17:23,304 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-6] JWT Token does not begin with Bearer String
+2023-07-03 00:17:23,305 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:17:23,306 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-6] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:17:23,307 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-6] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:17:23,307 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-6] View name 'forward:', model {}
+2023-07-03 00:17:23,308 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-6] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:17:23,309 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:17:23,312 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-6] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:17:23,313 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:17:23,314 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:17:23,314 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:17:23,315 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-6] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:17:23,318 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-6] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:17:23,319 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:18:36,974 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:18:36,978 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:18:36,984 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:18:41,840 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 1672 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:18:41,843 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:18:43,317 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:18:43,459 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 127 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:18:44,531 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:18:44,542 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:18:44,543 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:18:44,543 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:18:44,706 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:18:44,707 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2785 ms
+2023-07-03 00:18:44,879 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:18:45,119 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:18:45,125 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:18:46,969 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:18:47,520 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:18:48,081 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:18:48,448 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7962a364, org.springframework.security.web.context.SecurityContextPersistenceFilter@c2dab10, org.springframework.security.web.header.HeaderWriterFilter@5d00e30e, org.springframework.security.web.authentication.logout.LogoutFilter@4ac26092, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29088d3d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c38f4de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@756030e2, org.springframework.security.web.session.SessionManagementFilter@44103266, org.springframework.security.web.access.ExceptionTranslationFilter@4b9dd787, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@701da311]
+2023-07-03 00:18:48,579 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:18:48,644 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:18:48,677 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:18:48,689 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:18:48,949 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:18:49,015 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:18:49,485 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 8.342 seconds (JVM running for 9.255)
+2023-07-03 00:18:50,379 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:18:54,275 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:18:54,276 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:18:54,276 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:18:54,277 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:18:54,277 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:18:54,281 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1267f832
+2023-07-03 00:18:54,283 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@52518ee1
+2023-07-03 00:18:54,284 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:18:54,285 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 9 ms
+2023-07-03 00:18:54,327 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:18:54,329 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:18:54,342 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:18:54,354 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:18:54,354 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-1] View name 'forward:', model {}
+2023-07-03 00:18:54,357 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-1] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:18:54,359 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:18:54,363 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:18:54,364 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:18:54,366 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:18:54,367 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:18:54,369 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:18:54,394 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:18:54,400 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:23:47,280 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:23:47,284 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:23:47,292 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:23:52,758 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 17716 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:23:52,762 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:23:54,326 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:23:54,471 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 126 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:23:55,547 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:23:55,562 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:23:55,563 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:23:55,563 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:23:55,747 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:23:55,748 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2898 ms
+2023-07-03 00:23:55,920 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:23:56,192 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:23:56,200 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:23:57,998 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:23:58,549 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:23:59,261 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:23:59,625 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@365a4b9b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1eda12b3, org.springframework.security.web.header.HeaderWriterFilter@29088d3d, org.springframework.security.web.authentication.logout.LogoutFilter@a1689e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@193792e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62f3ad90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@240e61, org.springframework.security.web.session.SessionManagementFilter@220d7eb7, org.springframework.security.web.access.ExceptionTranslationFilter@c2dab10, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b84d03d]
+2023-07-03 00:23:59,796 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:23:59,871 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:23:59,899 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:23:59,909 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:24:00,235 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:24:00,313 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:24:00,764 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 8.742 seconds (JVM running for 9.674)
+2023-07-03 00:24:01,938 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:24:15,923 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:24:15,928 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:24:15,935 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:24:19,374 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 25028 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:24:19,377 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:24:20,930 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:24:21,084 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 132 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:24:22,203 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:24:22,217 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:24:22,219 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:24:22,220 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:24:22,408 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:24:22,409 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2944 ms
+2023-07-03 00:24:22,562 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:24:22,846 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:24:22,853 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:24:24,781 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:24:25,330 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:24:25,807 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:24:26,112 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@365a4b9b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1eda12b3, org.springframework.security.web.header.HeaderWriterFilter@29088d3d, org.springframework.security.web.authentication.logout.LogoutFilter@a1689e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@193792e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62f3ad90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@240e61, org.springframework.security.web.session.SessionManagementFilter@220d7eb7, org.springframework.security.web.access.ExceptionTranslationFilter@c2dab10, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b84d03d]
+2023-07-03 00:24:26,238 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:24:26,284 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:24:26,305 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:24:26,313 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:24:26,560 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:24:26,621 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:24:26,962 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 8.327 seconds (JVM running for 9.272)
+2023-07-03 00:24:28,130 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:24:35,957 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:24:35,957 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:24:35,958 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:24:35,958 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:24:35,959 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:24:35,960 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5319e4fc
+2023-07-03 00:24:35,961 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@16160a37
+2023-07-03 00:24:35,962 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:24:35,962 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 4 ms
+2023-07-03 00:24:35,987 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:24:35,990 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:24:36,000 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:24:36,009 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:24:36,010 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-1] View name 'forward:', model {}
+2023-07-03 00:24:36,013 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-1] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:24:36,018 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:24:36,025 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-1] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:24:36,025 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:24:36,028 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:24:36,029 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:24:36,035 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:24:36,071 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:24:36,075 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:24:41,673 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-3] JWT Token does not begin with Bearer String
+2023-07-03 00:24:41,674 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-3] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:24:41,676 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-3] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:24:41,677 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-3] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:24:41,677 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-3] View name 'forward:', model {}
+2023-07-03 00:24:41,678 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-3] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:24:41,679 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-3] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:24:41,681 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-3] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:24:41,682 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-3] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:24:41,683 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-3] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:24:41,684 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-3] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:24:41,686 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-3] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:24:41,688 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-3] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:24:41,690 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-3] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:24:44,391 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-4] JWT Token does not begin with Bearer String
+2023-07-03 00:24:44,392 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] GET "/monavocat/v1/swagger-ui", parameters={}
+2023-07-03 00:24:44,394 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+2023-07-03 00:24:44,395 DEBUG org.springframework.web.servlet.resource.ResourceHttpRequestHandler [http-nio-8085-exec-4] Resource not found
+2023-07-03 00:24:44,396 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Completed 404 NOT_FOUND
+2023-07-03 00:24:44,398 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:24:44,399 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:24:44,413 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-4] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:24:44,413 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Exiting from "ERROR" dispatch, status 404
+2023-07-03 00:24:51,016 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-6] JWT Token does not begin with Bearer String
+2023-07-03 00:24:51,017 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:24:51,018 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-6] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:24:51,019 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-6] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:24:51,019 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-6] View name 'forward:', model {}
+2023-07-03 00:24:51,020 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-6] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:24:51,020 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:24:51,022 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8085-exec-6] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-03 00:24:51,022 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Exiting from "FORWARD" dispatch, status 405
+2023-07-03 00:24:51,025 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Completed 405 METHOD_NOT_ALLOWED
+2023-07-03 00:24:51,026 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] "ERROR" dispatch for GET "/monavocat/v1/error", parameters={}
+2023-07-03 00:24:51,027 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-6] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2023-07-03 00:24:51,029 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-6] Selected 'text/html' given [text/html, text/html;q=0.8]
+2023-07-03 00:24:51,030 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Exiting from "ERROR" dispatch, status 405
+2023-07-03 00:28:59,045 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:28:59,049 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-03 00:28:59,056 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-03 00:29:04,431 INFO org.springframework.boot.StartupInfoLogger [main] Starting MonAvocatApplication using Java 19 on HAMZA-HASNAOUI with PID 4540 (C:\workspace\PFEProject\target\classes started by user in C:\workspace\PFEProject)
+2023-07-03 00:29:04,435 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: local
+2023-07-03 00:29:05,942 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-03 00:29:06,089 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 130 ms. Found 10 JPA repository interfaces.
+2023-07-03 00:29:07,132 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8085 (http)
+2023-07-03 00:29:07,143 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:29:07,144 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-07-03 00:29:07,144 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-07-03 00:29:07,324 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-07-03 00:29:07,325 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2803 ms
+2023-07-03 00:29:07,492 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-07-03 00:29:07,722 INFO com.zaxxer.hikari.pool.PoolBase [main] HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class com.mysql.jdbc.JDBC4Connection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+2023-07-03 00:29:07,728 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-07-03 00:29:09,437 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-03 00:29:10,006 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-03 00:29:10,710 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 20 mappings in 'requestMappingHandlerMapping'
+2023-07-03 00:29:11,110 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@365a4b9b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1eda12b3, org.springframework.security.web.header.HeaderWriterFilter@29088d3d, org.springframework.security.web.authentication.logout.LogoutFilter@a1689e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@193792e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62f3ad90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@240e61, org.springframework.security.web.session.SessionManagementFilter@220d7eb7, org.springframework.security.web.access.ExceptionTranslationFilter@c2dab10, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b84d03d]
+2023-07-03 00:29:11,257 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-03 00:29:11,324 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/swagger-ui/] in 'viewControllerHandlerMapping'
+2023-07-03 00:29:11,353 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**, /swagger-ui/**] in 'resourceHandlerMapping'
+2023-07-03 00:29:11,365 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-03 00:29:11,647 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8085"]
+2023-07-03 00:29:11,714 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8085 (http) with context path '/monavocat/v1'
+2023-07-03 00:29:12,122 INFO org.springframework.boot.StartupInfoLogger [main] Started MonAvocatApplication in 8.415 seconds (JVM running for 9.321)
+2023-07-03 00:29:13,103 INFO ma.monavocat.MonAvocatApplication [main] Access URLs:
+----------------------------------------------------------
+	Local: 		http://127.0.0.1:8085/monavocat/v1/swagger-ui/#/
+	External: 	http://192.168.1.131:8085/monavocat/v1/swagger-ui/#/
+----------------------------------------------------------
+2023-07-03 00:29:32,685 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8085-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-03 00:29:32,685 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-07-03 00:29:32,686 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected StandardServletMultipartResolver
+2023-07-03 00:29:32,687 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected AcceptHeaderLocaleResolver
+2023-07-03 00:29:32,687 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected FixedThemeResolver
+2023-07-03 00:29:32,689 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@5319e4fc
+2023-07-03 00:29:32,690 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8085-exec-1] Detected org.springframework.web.servlet.support.SessionFlashMapManager@16160a37
+2023-07-03 00:29:32,690 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2023-07-03 00:29:32,690 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed initialization in 4 ms
+2023-07-03 00:29:32,731 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-1] JWT Token does not begin with Bearer String
+2023-07-03 00:29:32,737 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] GET "/monavocat/v1/swagger-ui/", parameters={}
+2023-07-03 00:29:32,749 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ParameterizableViewController [view="forward:/swagger-ui/index.html"]
+2023-07-03 00:29:32,760 DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver [http-nio-8085-exec-1] Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8]
+2023-07-03 00:29:32,761 DEBUG org.springframework.web.servlet.view.AbstractView [http-nio-8085-exec-1] View name 'forward:', model {}
+2023-07-03 00:29:32,766 DEBUG org.springframework.web.servlet.view.InternalResourceView [http-nio-8085-exec-1] Forwarding to [/swagger-ui/index.html]
+2023-07-03 00:29:32,771 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-1] "FORWARD" dispatch for GET "/monavocat/v1/swagger-ui/index.html", parameters={}
+2023-07-03 00:29:32,774 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-1] Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+2023-07-03 00:29:32,797 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Exiting from "FORWARD" dispatch, status 200
+2023-07-03 00:29:32,800 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-1] Completed 200 OK
+2023-07-03 00:29:32,819 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-2] JWT Token does not begin with Bearer String
+2023-07-03 00:29:32,821 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] GET "/monavocat/v1/swagger-ui/springfox.css?v=3.0.0", parameters={masked}
+2023-07-03 00:29:32,824 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-2] Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+2023-07-03 00:29:32,829 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-3] JWT Token does not begin with Bearer String
+2023-07-03 00:29:32,831 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-5] JWT Token does not begin with Bearer String
+2023-07-03 00:29:32,831 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-6] JWT Token does not begin with Bearer String
+2023-07-03 00:29:32,830 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-4] JWT Token does not begin with Bearer String
+2023-07-03 00:29:32,832 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-5] GET "/monavocat/v1/swagger-ui/swagger-ui-standalone-preset.js?v=3.0.0", parameters={masked}
+2023-07-03 00:29:32,832 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] GET "/monavocat/v1/swagger-ui/swagger-ui-bundle.js?v=3.0.0", parameters={masked}
+2023-07-03 00:29:32,832 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-3] GET "/monavocat/v1/swagger-ui/swagger-ui.css?v=3.0.0", parameters={masked}
+2023-07-03 00:29:32,832 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-6] GET "/monavocat/v1/swagger-ui/springfox.js?v=3.0.0", parameters={masked}
+2023-07-03 00:29:32,834 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-6] Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+2023-07-03 00:29:32,834 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-3] Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+2023-07-03 00:29:32,834 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-5] Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+2023-07-03 00:29:32,834 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/springfox-swagger-ui/]]
+2023-07-03 00:29:32,835 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-2] Completed 200 OK
+2023-07-03 00:29:32,846 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-6] Completed 200 OK
+2023-07-03 00:29:32,847 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-3] Completed 200 OK
+2023-07-03 00:29:32,860 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-5] Completed 200 OK
+2023-07-03 00:29:32,899 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Completed 200 OK
+2023-07-03 00:29:33,758 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-7] JWT Token does not begin with Bearer String
+2023-07-03 00:29:33,760 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-7] GET "/monavocat/v1/swagger-resources/configuration/ui", parameters={}
+2023-07-03 00:29:33,763 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-7] Mapped to springfox.documentation.swagger.web.ApiResourceController#uiConfiguration()
+2023-07-03 00:29:33,786 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-7] Using 'application/json', given [application/json] and supported [application/json]
+2023-07-03 00:29:33,820 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-7] Writing [springfox.documentation.swagger.web.UiConfiguration@3da8f5ae]
+2023-07-03 00:29:33,836 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-7] Completed 200 OK
+2023-07-03 00:29:33,840 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-8] JWT Token does not begin with Bearer String
+2023-07-03 00:29:33,840 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-8] GET "/monavocat/v1/swagger-resources/configuration/security", parameters={}
+2023-07-03 00:29:33,841 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-8] Mapped to springfox.documentation.swagger.web.ApiResourceController#securityConfiguration()
+2023-07-03 00:29:33,842 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-8] Using 'application/json', given [application/json] and supported [application/json]
+2023-07-03 00:29:33,845 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-8] Writing [springfox.documentation.swagger.web.SecurityConfiguration@7745b7]
+2023-07-03 00:29:33,846 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-8] Completed 200 OK
+2023-07-03 00:29:33,851 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-9] JWT Token does not begin with Bearer String
+2023-07-03 00:29:33,851 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-9] GET "/monavocat/v1/swagger-resources", parameters={}
+2023-07-03 00:29:33,852 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-9] Mapped to springfox.documentation.swagger.web.ApiResourceController#swaggerResources()
+2023-07-03 00:29:33,853 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-9] Using 'application/json', given [application/json] and supported [application/json]
+2023-07-03 00:29:33,854 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-9] Writing [[springfox.documentation.swagger.web.SwaggerResource@65db005a]]
+2023-07-03 00:29:33,857 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-9] Completed 200 OK
+2023-07-03 00:29:33,906 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-10] JWT Token does not begin with Bearer String
+2023-07-03 00:29:33,906 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-10] GET "/monavocat/v1/v2/api-docs", parameters={}
+2023-07-03 00:29:33,907 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-10] Mapped to springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)
+2023-07-03 00:29:34,101 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-10] Using 'application/json', given [application/json, */*] and supported [application/json, application/hal+json]
+2023-07-03 00:29:34,105 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-10] Writing [springfox.documentation.spring.web.json.Json@32cac5d3]
+2023-07-03 00:29:34,108 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-10] Completed 200 OK
+2023-07-03 00:30:15,456 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-4] JWT Token does not begin with Bearer String
+2023-07-03 00:30:15,457 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] POST "/monavocat/v1/users/authenticate", parameters={}
+2023-07-03 00:30:15,458 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-4] Mapped to ma.monavocat.Controllers.UserController#authenticate(JwtRequest)
+2023-07-03 00:30:15,506 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] Read "application/json;charset=UTF-8" to [JwtRequest{userName='said1', pwd='123'}]
+2023-07-03 00:30:15,996 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-4] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:30:15,997 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-4] Writing [ma.monavocat.Dtos.JwtResponse@52b4352d]
+2023-07-03 00:30:15,998 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-4] Completed 200 OK
+2023-07-03 00:32:06,627 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-8] POST "/monavocat/v1/tribunal", parameters={}
+2023-07-03 00:32:06,628 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-8] Mapped to ma.monavocat.Controllers.TribunalController#creerTribunal(TribunalDto)
+2023-07-03 00:32:06,642 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-8] Read "application/json;charset=UTF-8" to [TribunalDto{id=1, adresse='salama', nom='salah', type='xycgjkl'}]
+2023-07-03 00:32:06,685 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-8] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:32:06,685 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-8] Writing [TribunalEntity{id=8, adresse='salama', nom='salah', type='xycgjkl', dossierEntities=null}]
+2023-07-03 00:32:06,687 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-8] Completed 200 OK
+2023-07-03 00:32:09,823 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-10] POST "/monavocat/v1/tribunal", parameters={}
+2023-07-03 00:32:09,824 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-10] Mapped to ma.monavocat.Controllers.TribunalController#creerTribunal(TribunalDto)
+2023-07-03 00:32:09,825 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-10] Read "application/json;charset=UTF-8" to [TribunalDto{id=1, adresse='salama', nom='salah', type='xycgjkl'}]
+2023-07-03 00:32:09,839 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-10] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:32:09,839 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-10] Writing [TribunalEntity{id=9, adresse='salama', nom='salah', type='xycgjkl', dossierEntities=null}]
+2023-07-03 00:32:09,840 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-10] Completed 200 OK
+2023-07-03 00:33:43,388 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-5] POST "/monavocat/v1/tribunal", parameters={}
+2023-07-03 00:33:43,389 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-5] Mapped to ma.monavocat.Controllers.TribunalController#creerTribunal(TribunalDto)
+2023-07-03 00:33:43,391 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-5] Read "application/json;charset=UTF-8" to [TribunalDto{id=9, adresse='salama', nom='salah', type='xycgjkl'}]
+2023-07-03 00:33:43,427 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:33:43,429 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-5] Writing [TribunalEntity{id=9, adresse='salama', nom='salah', type='xycgjkl', dossierEntities=null}]
+2023-07-03 00:33:43,432 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-5] Completed 200 OK
+2023-07-03 00:36:55,824 WARN ma.monavocat.Filters.JwtRequestFilter [http-nio-8085-exec-2] JWT Token does not begin with Bearer String
+2023-07-03 00:36:55,825 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] GET "/monavocat/v1/tribunal/list", parameters={}
+2023-07-03 00:36:55,826 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8085-exec-2] Mapped to ma.monavocat.Controllers.TribunalController#afficherLesTribunaux()
+2023-07-03 00:36:55,877 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8085-exec-2] Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.7, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2023-07-03 00:36:55,894 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8085-exec-2] Writing [[TribunalEntity{id=8, adresse='salama', nom='salah', type='xycgjkl', dossierEntities=[]}, TribunalEn (truncated)...]
+2023-07-03 00:36:55,905 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8085-exec-2] Completed 200 OK
+2023-07-03 01:05:47,198 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m9s441ms167µs300ns).
