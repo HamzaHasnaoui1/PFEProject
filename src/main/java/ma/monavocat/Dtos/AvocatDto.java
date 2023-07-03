@@ -1,11 +1,16 @@
 package ma.monavocat.Dtos;
 
 public class AvocatDto {
+    private Long id;
     private int telephone ;
     private String code ;
     private String mail ;
     private String prenom ;
     private String nom ;
+
+    public AvocatDto(long id) {
+
+    }
 
     public int getTelephone() {
         return telephone;
@@ -47,15 +52,13 @@ public class AvocatDto {
         this.nom = nom;
     }
 
-    @Override
-    public String toString() {
-        return "AvocatDto{" +
-                "telephone=" + telephone +
-                ", code='" + code + '\'' +
-                ", mail='" + mail + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", nom='" + nom + '\'' +
-                '}';
+    public Long getId() {
+        return id;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }
 

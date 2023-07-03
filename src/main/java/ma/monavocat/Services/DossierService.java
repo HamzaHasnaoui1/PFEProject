@@ -6,11 +6,11 @@ import ma.monavocat.Entities.DossierEntity;
 import java.util.List;
 
 public interface DossierService {
-        DossierDto save(DossierDto dossierDto);
+        DossierDto ajouterDossier(DossierDto dossierDto);
 
-        DossierDto update(DossierDto dossierDto);
+        DossierDto modifierDossier(DossierDto dossierDto);
 
-        Boolean delete(DossierDto dossierDto );
+        boolean delete(DossierDto dossierDto );
 
         List<DossierDto> selectAll();
 

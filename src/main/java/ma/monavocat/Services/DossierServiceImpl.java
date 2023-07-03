@@ -24,7 +24,7 @@ public class DossierServiceImpl implements DossierService {
     }
 
     @Override
-    public DossierDto save(DossierDto dossierDto) {
+    public DossierDto ajouterDossier(DossierDto dossierDto) {
         LOGGER.debug("start method save dto : {} ",dossierDto);
         LOGGER.debug("Mapping Dto to Entity : {} ",dossierMapper.dossierDtotoDossierEntity(dossierDto));
         DossierDto re = dossierMapper.dossierEntitytoDossierDto(dossierRepository.save(dossierMapper.dossierDtotoDossierEntity(dossierDto)));
@@ -32,7 +32,7 @@ public class DossierServiceImpl implements DossierService {
     }
 
     @Override
-    public DossierDto update(DossierDto dossierDto) {
+    public DossierDto modifierDossier(DossierDto dossierDto) {
 
         // Recureper l'objet a modifier par numero dossier
         DossierEntity dossierEntityAModifier = dossierRepository.findByNumeroDossier(dossierDto.getNumeroDossier()).get();
@@ -47,14 +47,17 @@ public class DossierServiceImpl implements DossierService {
     }
 
     @Override
-    public Boolean delete(DossierDto dossierDto) {
-        return null;
+    public boolean delete(DossierDto dossierDto) {
+        LOGGER.debug("start method delete id : {} ",dossierDto);
+        dossierRepository.deleteById((dossierMapper.dossierDtotoDossierEntity(dossierDto)).getId());
+        return true;
     }
 
     @Override
     public List<DossierDto> selectAll() {
         return null;
     }
+
     @Override
     public List<DossierEntity> afficherListDossier() {
         return  dossierRepository.findAll();

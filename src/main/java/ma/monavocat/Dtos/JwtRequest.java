@@ -2,7 +2,7 @@ package ma.monavocat.Dtos;
 
 public class JwtRequest {
     private String userName;
-    private String pwd;
+    private String password;
 
     public String getUserName() {
         return userName;
@@ -12,19 +12,19 @@ public class JwtRequest {
         this.userName = userName;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
         return "JwtRequest{" +
                 "userName='" + userName + '\'' +
-                ", pwd='" + pwd + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

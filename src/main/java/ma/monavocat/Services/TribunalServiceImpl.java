@@ -5,6 +5,8 @@ import ma.monavocat.Entities.TribunalEntity;
 import ma.monavocat.Mappers.TribunalMapper;
 import ma.monavocat.Repository.TribunalRepository;
 import org.mapstruct.factory.Mappers;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +21,7 @@ public class TribunalServiceImpl implements TribunalService {
     public TribunalServiceImpl(TribunalRepository tribunalRepository) {
         this.tribunalRepository = tribunalRepository;
     }
-
+    private final static Logger LOGGER= LoggerFactory.getLogger(TribunalServiceImpl.class);
 
     public TribunalEntity creerTribunal (TribunalDto tribunalDto){
         TribunalEntity tribunalEntity = tribunalMapper.tribunalDtoToTribunalEntity(tribunalDto);
@@ -27,6 +29,7 @@ public class TribunalServiceImpl implements TribunalService {
     }
 
     public List<TribunalEntity> afficherListTribunal () {
+
         return  tribunalRepository.findAll();
     }
 
@@ -43,9 +46,9 @@ public class TribunalServiceImpl implements TribunalService {
 
     }
 
-    @Override
-    public Boolean supprimerTribunal(TribunalDto s) {
-        return null;
+    public Boolean supprimerTribunal( TribunalDto s) {
+        LOGGER.debug("start method delete id : {} ",s);
+        tribunalRepository.deleteById((tribunalMapper.tribunalDtoToTribunalEntity(s)).getId());
+        return true;
     }
-
 }

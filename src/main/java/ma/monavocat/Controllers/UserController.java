@@ -36,7 +36,7 @@ public class UserController {
         try {
             authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        request.getUserName(),request.getPwd()));
+                        request.getUserName(),request.getPassword()));
         }catch (BadCredentialsException e){
             throw e;
         }

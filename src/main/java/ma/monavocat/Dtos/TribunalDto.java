@@ -1,14 +1,6 @@
 package ma.monavocat.Dtos;
 
 public class TribunalDto {
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     private Long id;
     private String adresse ;
     private String nom ;
@@ -31,6 +23,13 @@ public class TribunalDto {
     }
 
     public TribunalDto(Long id) {
+        this.id = id;
+    }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -19,24 +19,24 @@ public class DossierController {
         this.dossierServiceImpl = dossierServiceImpl;
     }
 
-    @PostMapping("/save")
-    public DossierDto save(@RequestBody DossierDto dto) {
+    @PostMapping("/ajouterDossier")
+    public DossierDto ajouterDossier(@RequestBody DossierDto dto) {
         LOGGER.debug("start method save dto : {} ", dto);
-        return dossierServiceImpl.save(dto);
+        return dossierServiceImpl.ajouterDossier(dto);
     }
 
-    @PutMapping("/update")
-    public DossierDto update(@RequestBody DossierDto dto) {
-        return dossierServiceImpl.update(dto);
+    @PutMapping("/modifierDossier")
+    public DossierDto modifierDossier(@RequestBody DossierDto dto) {
+        return dossierServiceImpl.modifierDossier(dto);
     }
     @GetMapping("/list")
     public List<DossierEntity> afficherLesDossier() {
         return dossierServiceImpl.afficherListDossier();
     }
-    @DeleteMapping("/{id}/{code}")
-    public Boolean deleteById(@PathVariable("id") long id,@PathVariable("code") String code) {
-        LOGGER.debug("start method select by id {} , code {} ",id,code);
-        DossierDto idcomp =new DossierDto(id,code);
+    @DeleteMapping("/{id}")
+    public Boolean deleteById(@PathVariable("id") long id) {
+        LOGGER.debug("start method select by id {} ",id);
+        DossierDto idcomp =new DossierDto(id);
         return dossierServiceImpl.delete(idcomp);
     }
 }

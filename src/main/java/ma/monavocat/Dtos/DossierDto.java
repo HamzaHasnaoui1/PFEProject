@@ -9,7 +9,7 @@ private String type ;
 private String nomAdversaire;
 private String etat;
 
-    public DossierDto(long id, String code) {
+    public DossierDto(long id) {
 
     }
 

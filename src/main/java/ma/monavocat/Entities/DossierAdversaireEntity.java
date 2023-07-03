@@ -3,10 +3,17 @@ package ma.monavocat.Entities;
 import javax.persistence.*;
 
 @Entity
-public class DossierAvocat {
+public class DossierAdversaireEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private DossierEntity dossierEntity;
+
+    @JoinColumn(name = "client_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Client client;
 
     public Long getId() {
         return id;
@@ -24,18 +31,11 @@ public class DossierAvocat {
         this.dossierEntity = dossierEntity;
     }
 
-    public AvocatEntity getAvocatEntity() {
-        return avocatEntity;
+    public Client getClient() {
+        return client;
     }
 
-    public void setAvocatEntity(AvocatEntity avocatEntity) {
-        this.avocatEntity = avocatEntity;
+    public void setClient(Client client) {
+        this.client = client;
     }
-    @JoinColumn(name = "dossierEntity_id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private DossierEntity dossierEntity;
-
-    @JoinColumn(name = "avocatEntity_id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private AvocatEntity avocatEntity;
 }

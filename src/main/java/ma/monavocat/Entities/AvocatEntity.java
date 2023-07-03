@@ -4,14 +4,24 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Client {
+public class AvocatEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id ;
-    private String nom ;
-    private String prenom ;
-    private String cin;
-    private int telephone ;
+    private Long id;
+    private String nom;
+    private String prenom;
+    private String code;
+
+    public AvocatEntity(Long id, String nom, String prenom, String code, int telephone, String mail, List<RendezVous> rendezVous, List<DossierAvocat> dossierAvocats) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.code = code;
+        this.telephone = telephone;
+        this.mail = mail;
+        this.rendezVous = rendezVous;
+        this.dossierAvocats = dossierAvocats;
+    }
 
     public Long getId() {
         return id;
@@ -37,12 +47,12 @@ public class Client {
         this.prenom = prenom;
     }
 
-    public String getCin() {
-        return cin;
+    public String getCode() {
+        return code;
     }
 
-    public void setCin(String cin) {
-        this.cin = cin;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public int getTelephone() {
@@ -61,14 +71,6 @@ public class Client {
         this.mail = mail;
     }
 
-    public String getAdresse() {
-        return adresse;
-    }
-
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
     public List<RendezVous> getRendezVous() {
         return rendezVous;
     }
@@ -77,31 +79,22 @@ public class Client {
         this.rendezVous = rendezVous;
     }
 
-    public List<DossierClient> getDossierClients() {
-        return dossierClients;
+    public List<DossierAvocat> getDossierAvocats() {
+        return dossierAvocats;
     }
 
-    public void setDossierClients(List<DossierClient> dossierClients) {
-        this.dossierClients = dossierClients;
+    public void setDossierAvocats(List<DossierAvocat> dossierAvocats) {
+        this.dossierAvocats = dossierAvocats;
     }
 
-    public List<DossierAdversaireEntity> getDossierAdversaireEntities() {
-        return dossierAdversaireEntities;
-    }
-
-    public void setDossierAdversaireEntities(List<DossierAdversaireEntity> dossierAdversaireEntities) {
-        this.dossierAdversaireEntities = dossierAdversaireEntities;
-    }
-
-    private String mail ;
-    private String adresse;
+    private int telephone;
+    private String mail;
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<RendezVous> rendezVous;
 
     @OneToMany(fetch = FetchType.LAZY)
-    private List<DossierClient> dossierClients;
+    private List<DossierAvocat> dossierAvocats;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private  List<DossierAdversaireEntity> dossierAdversaireEntities;
 }
+

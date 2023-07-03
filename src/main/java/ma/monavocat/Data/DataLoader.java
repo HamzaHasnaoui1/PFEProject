@@ -17,6 +17,6 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         for (int i=1;i<10;i++)
-    userRepository.save(new UserEntity("said"+i, passwordEncoder.encode("123"),"a@gmail.com"));
+    userRepository.save(new UserEntity("admin"+i, passwordEncoder.encode("123"),"a@gmail.com"));
     }
 }
