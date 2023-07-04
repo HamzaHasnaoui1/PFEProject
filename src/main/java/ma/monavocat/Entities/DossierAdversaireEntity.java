@@ -13,7 +13,7 @@ public class DossierAdversaireEntity {
 
     @JoinColumn(name = "client_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Client client;
+    private ClientEntity clientEntity;
 
     public Long getId() {
         return id;
@@ -31,11 +31,11 @@ public class DossierAdversaireEntity {
         this.dossierEntity = dossierEntity;
     }
 
-    public Client getClient() {
-        return client;
+    public ClientEntity getClient() {
+        return clientEntity;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(ClientEntity clientEntity) {
+        this.clientEntity = clientEntity;
     }
 }

@@ -14,25 +14,18 @@ import java.util.Optional;
 
 @Service
 public class TribunalServiceImpl implements TribunalService {
-
-    private final TribunalRepository tribunalRepository;
+    private final static Logger LOGGER= LoggerFactory.getLogger(TribunalServiceImpl.class);
     private final TribunalMapper tribunalMapper = Mappers.getMapper(TribunalMapper.class);
+    private final TribunalRepository tribunalRepository;
 
     public TribunalServiceImpl(TribunalRepository tribunalRepository) {
         this.tribunalRepository = tribunalRepository;
     }
-    private final static Logger LOGGER= LoggerFactory.getLogger(TribunalServiceImpl.class);
 
     public TribunalEntity creerTribunal (TribunalDto tribunalDto){
         TribunalEntity tribunalEntity = tribunalMapper.tribunalDtoToTribunalEntity(tribunalDto);
         return tribunalRepository.save(tribunalEntity) ;
     }
-
-    public List<TribunalEntity> afficherListTribunal () {
-
-        return  tribunalRepository.findAll();
-    }
-
     @Override
     public TribunalEntity modifierTribunal(TribunalDto s) {
       Optional<TribunalEntity> tribunalAModifer = tribunalRepository.findById(s.getId());
@@ -45,7 +38,9 @@ public class TribunalServiceImpl implements TribunalService {
         return null;
 
     }
-
+    public List<TribunalEntity> afficherListTribunal () {
+        return  tribunalRepository.findAll();
+    }
     public Boolean supprimerTribunal( TribunalDto s) {
         LOGGER.debug("start method delete id : {} ",s);
         tribunalRepository.deleteById((tribunalMapper.tribunalDtoToTribunalEntity(s)).getId());

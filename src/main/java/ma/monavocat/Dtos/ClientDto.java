@@ -8,6 +8,10 @@ public class ClientDto {
     private String nom ;
     private String addresse;
 
+    public ClientDto(long id) {
+
+    }
+
     public int getTelephone() {
         return telephone;
     }

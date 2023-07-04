@@ -1,9 +1,9 @@
 package ma.monavocat.Repository;
 
-import ma.monavocat.Entities.Client;
+import ma.monavocat.Entities.ClientEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ClientRepository extends JpaRepository <Client, Long> {
+public interface ClientRepository extends JpaRepository <ClientEntity, Long> {
 }

@@ -16,12 +16,12 @@ public class DossierClient {
         this.id = id;
     }
 
-    public Client getClient() {
-        return client;
+    public ClientEntity getClient() {
+        return clientEntity;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(ClientEntity clientEntity) {
+        this.clientEntity = clientEntity;
     }
 
     public DossierEntity getDossierEntity() {
@@ -34,7 +34,7 @@ public class DossierClient {
 
     @JoinColumn(name = "client_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Client client;
+    private ClientEntity clientEntity;
     @JoinColumn(name = "dossierEntity_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private DossierEntity dossierEntity;

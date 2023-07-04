@@ -57,4 +57,10 @@ public class SecretaireDto {
                 ", nom='" + nom + '\'' +
                 '}';
     }
+
+    public Long getId() {
+
+        return null;
+    }
+
 }

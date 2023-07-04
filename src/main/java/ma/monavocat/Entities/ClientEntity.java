@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Client {
+public class ClientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id ;
@@ -12,6 +12,21 @@ public class Client {
     private String prenom ;
     private String cin;
     private int telephone ;
+    private String mail ;
+    private String adresse;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<RendezVous> rendezVous;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<DossierClient> dossierClients;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private  List<DossierAdversaireEntity> dossierAdversaireEntities;
+
+    public ClientEntity() {
+
+    }
 
     public Long getId() {
         return id;
@@ -93,15 +108,32 @@ public class Client {
         this.dossierAdversaireEntities = dossierAdversaireEntities;
     }
 
-    private String mail ;
-    private String adresse;
+    public ClientEntity(Long id, String nom, String prenom, String cin, int telephone, String mail, String adresse, List<RendezVous> rendezVous, List<DossierClient> dossierClients, List<DossierAdversaireEntity> dossierAdversaireEntities) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.cin = cin;
+        this.telephone = telephone;
+        this.mail = mail;
+        this.adresse = adresse;
+        this.rendezVous = rendezVous;
+        this.dossierClients = dossierClients;
+        this.dossierAdversaireEntities = dossierAdversaireEntities;
+    }
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<RendezVous> rendezVous;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<DossierClient> dossierClients;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    private  List<DossierAdversaireEntity> dossierAdversaireEntities;
+    @Override
+    public String toString() {
+        return "ClientEntity{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", cin='" + cin + '\'' +
+                ", telephone=" + telephone +
+                ", mail='" + mail + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", rendezVous=" + rendezVous +
+                ", dossierClients=" + dossierClients +
+                ", dossierAdversaireEntities=" + dossierAdversaireEntities +
+                '}';
+    }
 }

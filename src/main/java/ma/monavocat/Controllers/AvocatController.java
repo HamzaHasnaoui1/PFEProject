@@ -1,10 +1,10 @@
 package ma.monavocat.Controllers;
 
 import ma.monavocat.Dtos.AvocatDto;
-import ma.monavocat.Entities.AvocatEntity;
 import ma.monavocat.Services.AvocatServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,25 +13,24 @@ import java.util.List;
 @RequestMapping("/avocat")
 public class AvocatController {
     private final static Logger LOGGER= LoggerFactory.getLogger(TribunalController.class);
+    @Autowired
     private final AvocatServiceImpl avocatService;
-
-
     public AvocatController(AvocatServiceImpl avocatService) {
         this.avocatService = avocatService;
     }
 
     @PostMapping("/ajouterAvocat")
-    public AvocatDto ajouterAvocat(@RequestBody AvocatDto dto) {
+    public Long ajouterAvocat(@RequestBody AvocatDto dto) {
         LOGGER.debug("start method save dto : {} ", dto);
         return avocatService.ajouterAvocat(dto);
     }
 
     @PutMapping("/modifierAvocat")
-    public AvocatDto modifierAvocat(@RequestBody AvocatDto dto) {
+    public Long modifierAvocat(@RequestBody AvocatDto dto) {
         return avocatService.modifierAvocat(dto);
     }
     @GetMapping("/list")
-    public List<AvocatEntity> afficherLesDossier() {
+    public List<AvocatDto> afficherLesDossier() {
         return avocatService.afficherListAvocat();
     }
     @DeleteMapping("/{id}")

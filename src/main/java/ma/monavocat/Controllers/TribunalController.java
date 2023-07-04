@@ -38,8 +38,7 @@ public class TribunalController {
     @DeleteMapping("/{id}")
     public Boolean deleteById(@PathVariable("id") long id) {
         LOGGER.debug("start method select by id {}",id);
-        TribunalDto idcomp =new TribunalDto
-                (id);
+        TribunalDto idcomp =new TribunalDto(id);
         return tribunalServiceImpl.supprimerTribunal(idcomp);
     }
 

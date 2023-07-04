@@ -8,8 +8,8 @@ public class TribunalEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id ;
-    private String adresse ;
     private String nom ;
+    private String adresse ;
     private String type;
 
     @OneToMany(fetch = FetchType.LAZY)
@@ -62,8 +62,8 @@ public class TribunalEntity {
 
     public TribunalEntity(Long id, String adresse, String nom, String type, List<DossierEntity> dossierEntities) {
         this.id = id;
-        this.adresse = adresse;
         this.nom = nom;
+        this.adresse = adresse;
         this.type = type;
         this.dossierEntities = dossierEntities;
     }

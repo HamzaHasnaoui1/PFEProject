@@ -11,6 +11,13 @@ public class AvocatEntity {
     private String nom;
     private String prenom;
     private String code;
+    private int telephone ;
+    private String mail ;
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<RendezVous> rendezVous;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<DossierAvocat> dossierAvocats;
 
     public AvocatEntity(Long id, String nom, String prenom, String code, int telephone, String mail, List<RendezVous> rendezVous, List<DossierAvocat> dossierAvocats) {
         this.id = id;
@@ -35,9 +42,7 @@ public class AvocatEntity {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+    public void setNom(String nom) {this.nom = nom;}
 
     public String getPrenom() {
         return prenom;
@@ -87,14 +92,18 @@ public class AvocatEntity {
         this.dossierAvocats = dossierAvocats;
     }
 
-    private int telephone;
-    private String mail;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<RendezVous> rendezVous;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<DossierAvocat> dossierAvocats;
-
+    @Override
+    public String toString() {
+        return "AvocatEntity{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", code='" + code + '\'' +
+                ", telephone=" + telephone +
+                ", mail='" + mail + '\'' +
+                ", rendezVous=" + rendezVous +
+                ", dossierAvocats=" + dossierAvocats +
+                '}';
+    }
 }
 

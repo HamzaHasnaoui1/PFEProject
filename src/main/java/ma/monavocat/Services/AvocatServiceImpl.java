@@ -25,18 +25,18 @@ public class AvocatServiceImpl implements AvocatService{
 
 
     @Override
-    public AvocatDto ajouterAvocat(AvocatDto avocatDto) {
-        LOGGER.debug("start method save dto : {} ", avocatDto);
-        LOGGER.debug("Mapping Dto to Entity : {} ", avocatMapper.avocatDtoToAvocatEntity(avocatDto));
-        AvocatDto re = avocatMapper.avocatEntityToAvocatDto(avocatRepository.save(avocatMapper.avocatDtoToAvocatEntity(avocatDto)));
-        return re;
+    public Long ajouterAvocat(AvocatDto dto) {
+        LOGGER.debug("start method save dto : {} ", dto);
+        LOGGER.debug("Mapping Dto to Entity : {} ", avocatMapper.avocatDtoToAvocatEntity(dto));
+        AvocatDto re = avocatMapper.avocatEntityToAvocatDto(avocatRepository.save(avocatMapper.avocatDtoToAvocatEntity(dto)));
+        return re.getId();
     }
 
-    public AvocatDto modifierAvocat(AvocatDto avocatDto) {
-        LOGGER.debug("start method update dto : {}",avocatDto);
-        LOGGER.debug("Mapping Dto to Entity : {} ", avocatMapper.avocatDtoToAvocatEntity(avocatDto));
-        AvocatDto re = avocatMapper.avocatEntityToAvocatDto(avocatRepository.save(avocatMapper.avocatDtoToAvocatEntity(avocatDto)));
-        return re ;
+    public Long modifierAvocat(AvocatDto dto) {
+        LOGGER.debug("start method update dto : {}",dto);
+        LOGGER.debug("Mapping Dto to Entity : {} ", avocatMapper.avocatDtoToAvocatEntity(dto));
+        AvocatDto re = avocatMapper.avocatEntityToAvocatDto(avocatRepository.save(avocatMapper.avocatDtoToAvocatEntity(dto)));
+        return re.getId();
     }
 
     @Override
@@ -46,8 +46,9 @@ public class AvocatServiceImpl implements AvocatService{
         return true;
     }
     @Override
-    public List<AvocatEntity> afficherListAvocat() {
-        return  avocatRepository.findAll();
+    public List<AvocatDto> afficherListAvocat() {
+        LOGGER.debug("start method select All");
+        return avocatMapper.avocatEntityToAvocatDto(avocatRepository.findAll());
     }
 
 }
